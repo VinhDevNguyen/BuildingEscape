@@ -22,6 +22,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void OpenDoor();
+	void CloseDoor();
 
 public:	
 	// Called every frame
@@ -34,5 +35,11 @@ private:
 	ATriggerVolume* PressurePlate;// Remember pawn inherits from actor
 
 	UPROPERTY(EditAnywhere)
+	float DoorCloseDelay = 0.5f;
+
+	float LastDoorOpenTime;
+
 	AActor* ActorThatOpens;// Remember pawn inherits from actor
+
+	AActor* Owner; //This is the owning door
 };
