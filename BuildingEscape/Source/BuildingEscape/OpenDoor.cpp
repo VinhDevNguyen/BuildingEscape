@@ -25,8 +25,6 @@ void UOpenDoor::BeginPlay()
 
 
 
-
-
 // Called every frame
 void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
