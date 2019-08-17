@@ -5,6 +5,8 @@
 #include"Runtime/Engine/Classes/Engine/World.h"
 #include"GameFramework/PlayerController.h"
 #include"DrawDebugHelpers.h"
+
+
 #define OUT
 // Sets default values for this component's properties
 UGrabber::UGrabber()
@@ -24,6 +26,16 @@ void UGrabber::BeginPlay()
 	
 	UE_LOG(LogTemp, Warning, TEXT("Grabber reporting for Duty!"));
 	
+	// look for attached Physics Handle
+	PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
+	if (PhysicsHandle)
+	{
+		//Physics handle is found
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("%s missing physics handle component"), *GetOwner()->GetName());
+	}
 }
 
 
