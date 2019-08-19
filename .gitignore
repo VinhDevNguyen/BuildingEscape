@@ -16,3 +16,4 @@ BuildingEscape/Content/StarterContent/
 *.db-wal
 *.opendb
 *.db-shm
+.vscode/c_cpp_properties.json
