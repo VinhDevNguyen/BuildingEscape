@@ -7,7 +7,6 @@
 #include "Engine/TriggerVolume.h"
 #include "OpenDoor.generated.h"
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BUILDINGESCAPE_API UOpenDoor : public UActorComponent
 {
@@ -42,4 +41,7 @@ private:
 	AActor* ActorThatOpens;// Remember pawn inherits from actor
 
 	AActor* Owner; //This is the owning door
+
+	//Return the total mass of the actor
+	float GetTotalMassOfActorsOnPlate();
 };
