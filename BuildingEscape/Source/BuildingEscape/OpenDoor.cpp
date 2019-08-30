@@ -66,12 +66,11 @@ float UOpenDoor::GetTotalMassOfActorsOnPlate()
 
 void UOpenDoor::OpenDoor()
 {
-	if (!Owner) { return; }
-	Owner->SetActorRotation(FRotator(0.0f, OpenAngle, 0.0f));// Set the door ratation (y,z,x)
+	//Owner->SetActorRotation(FRotator(0.0f, OpenAngle, 0.0f));// Set the door ratation (y,z,x)
+	OnOpenRequest.Broadcast();
 }
 
 void UOpenDoor::CloseDoor()
 {
-	if (!Owner) { return; }
 	Owner->SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));// Set the door ratation (y,z,x)
 }
